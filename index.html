@@ -1,0 +1,123 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Advencture</title>
+	<link rel="stylesheet" href="web.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+	<header>
+		<a href="#" class="brand">Travel</a>
+		<div class="menu-btn"></div>
+		<div class="navigation">
+			<div class="navigation-items">
+				<a href="#">Home</a>
+				<a href="#">About</a>
+				<a href="#">Explore</a>
+				<a href="#">Gallery</a>
+				<a href="#">Contact</a>
+			</div>	
+		</div>
+	</header>
+    <section class="home">
+		<video  class="video-slide active" src="1.mp4" autoplay muted loop></video>
+		<video  class="video-slide" src="2.mp4" autoplay muted loop></video>
+		<video  class="video-slide" src="3.mp4" autoplay muted loop></video>
+		<video  class="video-slide" src="4.mp4" autoplay muted loop></video>
+		<video  class="video-slide" src="5.mp4" autoplay muted loop></video>
+		<div class="content active">
+			<h1>Wonderfull<br><span>Island<span><i style="color: cyan;"   class="fa-solid fa-face-smile-wink"></i></span></span></h1>
+			<p>A wonderful island is a paradise of natural beauty and tranquility. Surrounded by crystal-clear waters and lush greenery, it offers a perfect escape from the hustle and bustle of everyday life. The soft sandy beaches and vibrant marine life create a serene and picturesque environment. Exploring the island's hidden trails and scenic spots can be both relaxing and adventurous. It's a place where you can unwind, rejuvenate, and connect with nature. 🏝️🌊🌴</p>
+			
+		</div>
+		<div class="content">
+			<h1>Feel<br><span>Nature Relax<span><i style="color: cyan;"   class="fa-solid fa-face-smile-wink"></i></span></span></h1>
+			<p>Feeling the gentle breeze and listening to the rustling leaves can instantly relax your mind. Nature's beauty, from the vibrant colors of flowers to the serene flow of rivers, offers a peaceful escape from daily stress. Walking through a forest or sitting by a lake allows you to connect with the earth and find inner calm. The chirping of birds and the scent of fresh air rejuvenate your senses. Taking a moment to immerse yourself in nature's tranquility can refresh your spirit and bring a sense of harmony. It's a simple yet powerful way to unwind and recharge. 🌿🌼🍃</p>
+			
+		</div>
+		<div class="content">
+			<h1>Advenctures<br><span>Off Road<span><i style="color: cyan;"   class="fa-solid fa-face-smile-wink"></i></span></span></h1>
+			<p style="color:rgb(231, 142, 214)">Embarking on an off-road car adventure is an exhilarating experience that takes you beyond the beaten path. Imagine navigating rugged terrains, crossing streams, and climbing steep hills, all while surrounded by breathtaking natural landscapes. The thrill of overcoming obstacles and the sense of freedom that comes with exploring remote areas make off-road driving truly unique. Whether you're driving through dense forests or vast deserts, each journey offers new challenges and unforgettable memories. It's not just about the destination, but the adventure and excitement along the way. So, buckle up and get ready for an unforgettable ride! 🚙🌲🏜️</p>
+			
+		</div>
+		<div class="content">
+			<h1>Long Drive<br><span>Togeather<span><i style="color: cyan;"   class="fa-solid fa-face-smile-wink"></i></span></span></h1>
+			<p>A long drive together can be a wonderful way to bond and create lasting memories. Imagine cruising along scenic routes, with the windows down and your favorite music playing.<span>The journey offers a chance to have meaningful conversations, share laughter, and enjoy the changing landscapes. Whether you're heading to a specific destination or just exploring new places, the experience of being on the road together can be both relaxing and exciting. It's all about the journey and the company you keep. 🚗🎶🌄</span></p>
+		</div>
+		<div class="content">
+			<h1>Camping.<br><span>Enjoy<span><i style="color: cyan;"   class="fa-solid fa-face-smile-wink"></i></span></span></h1>
+			<p>Camping together is a fantastic way to connect with nature and each other. Imagine setting up a cozy tent under the stars, gathering around a campfire to share stories 🏕️🔥🌲</p>
+		</div>
+		<div class="mid-icons">
+			<a href="#"><i class="fa-regular fa-compass" onclick = "compass()"></i></a>
+		    <a href="#"><i class="fa-solid fa-jet-fighter" onclick = "flight()"></i></a>
+			 <a href="#"><i class="fa-solid fa-train" onclick ="train()"></i></a>
+        </div>
+		<div class="slider-navigation">
+			<div class="nav-btn active"></div>
+			<div class="nav-btn"></div>
+			<div class="nav-btn"></div>
+			<div class="nav-btn"></div>
+			<div class="nav-btn"></div>
+		</div>
+	</section>
+	<script type="text/javascript">
+		const menuBtn = document.querySelector(".menu-btn");
+const navigation = document.querySelector(".navigation");
+const slides = document.querySelectorAll(".video-slide");
+const btns = document.querySelectorAll(".nav-btn");
+const contents = document.querySelectorAll(".content");
+
+menuBtn.addEventListener("click", () => {
+    menuBtn.classList.toggle("active");
+    navigation.classList.toggle("active");
+});
+
+const sliderNav = function(manual) {
+    btns.forEach((btn) => {
+        btn.classList.remove("active");
+    });
+    slides.forEach((slide) => {
+        slide.classList.remove("active");
+    });
+	contents.forEach((content) => {
+        content.classList.remove("active");
+    });
+
+    btns[manual].classList.add("active");
+    slides[manual].classList.add("active");
+	contents[manual].classList.add("active");
+
+}
+
+btns.forEach((btn, i) => {
+    btn.addEventListener("click", () => {
+        sliderNav(i);
+    });
+});
+function compass()
+{
+	window.location.href="https://onlinecompass.net/";
+}
+const compassIcon = document.querySelector('.fa-regular.fa-compass');
+
+compassIcon.addEventListener('click', compass);
+function flight()
+{
+	window.location.href="https://www.cleartrip.com/flights?utm_source=google_fl_search_ad&utm_medium=cpc&utm_campaign=Gen:High-Conv_Exact-DeskTab&utm_content=Customizer_ad&dxid=Cj0KCQjwr9m3BhDHARIsANut04ZAJwH0wMf3wQE6KNM4hZNlBN8Sr585WzVgD229xCQqHgcQMO45Cu0aAs6gEALw_wcB&gad_source=1&gclid=Cj0KCQjwr9m3BhDHARIsANut04ZAJwH0wMf3wQE6KNM4hZNlBN8Sr585WzVgD229xCQqHgcQMO45Cu0aAs6gEALw_wcB";
+}
+const  flightIcon = document.querySelector('.fa-solid.fa-jet-fighter');
+flightIcon.addEventListener('click',flight);
+function train()
+{
+	window.location.href="https://www.polishtrains.eu/?c=604475314&a=1344705167656077&e=&t=kwd-84045164316317&i=&p=155888&m=b&n=o&d=c&dm=&k=warsaw%20krakow%20train&pc=&ap=&r=&msclkid=d6d0a1919778181677c3c766e005c8fc&utm_source=bing&utm_medium=cpc&utm_campaign=01N%20PT%20SKAG&utm_term=warsaw%20krakow%20train&utm_content=warsaw%20krakow%20train";
+}
+const trailIcon=document.querySelector('fa-solid fa-train');
+trailIcon.addEventListener('click',train);
+
+	</script>
+
+</body>
+</html>
+
